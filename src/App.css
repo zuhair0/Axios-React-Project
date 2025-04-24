@@ -1,0 +1,85 @@
+/* Styling the ordered list */
+ol {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 20px auto;
+  max-width: 90%; /* Increase the max-width to allow more space */
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 20px; /* Space between grid items */
+}
+
+/* Styling each list item (post) */
+li {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Remove margin-bottom for the last item when there are multiple items */
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Title and body text styling */
+p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button container */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit Button Styling */
+button:nth-child(1) {
+  background-color: #3498db;
+  color: white;
+}
+
+button:nth-child(1):hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Delete Button Styling */
+button:nth-child(2) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button:nth-child(2):hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  ol {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  ol {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
