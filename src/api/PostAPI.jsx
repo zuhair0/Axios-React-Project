@@ -13,3 +13,8 @@ export const getPosts = ()=>{
 export const deletePost = (id)=>{
     return api.delete(`/posts/${id}`)
 }
+
+//post method
+export const createPost = (data)=>{
+    return api.post("/posts", data)
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deletePost, getPosts } from "../api/PostAPI";
 import "../App.css";
+import { Form } from "./Form";
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
   const getPostData = async () => {
@@ -31,6 +32,7 @@ export const Posts = () => {
   }
   return (
     <>
+    <Form posts={posts} setPosts={setPosts}/>
       <ol>
         {posts.map((post) => {
           return (
