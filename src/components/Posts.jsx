@@ -4,6 +4,8 @@ import "../App.css";
 import { Form } from "./Form";
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const [updatePost, setUpdatePost] = useState({});
+
   const getPostData = async () => {
     try {
       const res = await getPosts();
@@ -30,16 +32,19 @@ export const Posts = () => {
         
     }
   }
+  const handleUpdatePost = (post) => {
+    setUpdatePost(post);
+  }
   return (
     <>
-    <Form posts={posts} setPosts={setPosts}/>
+    <Form posts={posts} setPosts={setPosts} updatePost={updatePost} setUpdatePost={setUpdatePost}/>
       <ol>
         {posts.map((post) => {
           return (
             <li key={post.id}>
               <p>{post.title}</p>
               <p>{post.body}</p>
-              <button>Edit</button>
+              <button onClick={()=>handleUpdatePost(post)}>Edit</button>
               <button onClick={()=>handleDelete(post.id)}>Delete</button>
             </li>
           );
